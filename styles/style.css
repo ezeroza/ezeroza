@@ -47,7 +47,7 @@ nav ul li a:hover {
   font-size: 1.75rem;
   color: #7FFF00;
   text-decoration: none;
-  transition: all 2.5s ease;
+  transition: all 0.5s ease;
 }
 
 section {
