@@ -43,6 +43,12 @@ nav ul li a {
   color: #000000;
   text-decoration: none;
 }
+nav ul li a:hover {
+  font-size: 1.75rem;
+  color: #7FFF00;
+  text-decoration: none;
+  transition: all 2.5s ease;
+}
 
 section {
   padding: 2rem;
