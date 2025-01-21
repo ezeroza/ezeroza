@@ -114,7 +114,9 @@ button:hover {
   color: #000000;
   text-decoration: none;
 }
-
+form {
+  text-decoration: none;
+}
 .email {
   background-color: #066c5e;
   color: #000000;
