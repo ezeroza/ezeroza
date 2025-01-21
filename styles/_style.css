@@ -22,11 +22,11 @@ body {
     height: 100vh;
     display: grid;
     place-items: center;  
-    background-image: url(/assets/ep26.png);
+    background-image: url("/assets/warsaw1.png");
     background-size: cover;
     background-repeat: no-repeat;  
     /* background-color: #424551; */
-    font-family: "Monoton";
+    font-family: "Lobster", "cursive";
     overflow: hidden;
     /* font-family: La Belle Aurore; */
 }
@@ -90,7 +90,7 @@ a {
 
 .card-front {
     /* background-color: var(--clr); */
-    background-image: url(/assets/ep27.png);
+    background-image: url("/assets/scar1.png");
     background-size: cover;
     background-blend-mode: overlay;
     color: #000000;
@@ -136,7 +136,7 @@ a {
 .card-back {
     transform: rotateY(.5turn);
     color: #7FFF00;
-    background-image: url(/assets/throza1.jpg);
+    background-image: url("/assets/throza1.jpg");
     background-size: cover;
     background-position: center;
 }
