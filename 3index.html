@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Global Gastronomy & Verse</title>
+    <style>
+      /* style.css */
+      body {
+        font-family: "Lobster", cursive;
+        background-color: #191b1f; /* Dark Pewter Gray */
+        color: #4169e1; /* Light Gray for text */
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+      header {
+        width: 94%;
+        place-self: center;
+        background-color: #3c0110;
+        /* Wine Red */
+        color: #4169e1; /* Light Gray */
+        text-align: center;
+        padding: 2em 0;
+        border: 2px solid #191b1f; /* Dark Pewter Gray */
+        border-radius: 0.75rem;
+        box-shadow: 0px 5px 15px #1b4b7e; /* Light Gray */
+        /* border-bottom: 5px solid #4169e1; Royal Blue */
+      }
+      header h1 {
+        font-size: 3em;
+        margin-bottom: 0.2em;
+      }
+      header p {
+        font-size: 1.2em;
+      }
+      main {
+        padding: 2em;
+      }
+      .recipe-category {
+        margin-bottom: 2em;
+      }
+      .recipe-category h2 {
+        color: #4169e1; /* Royal Blue */
+        font-size: 2.2em;
+        margin-bottom: 0.5em;
+        border-bottom: 2px solid #3c0110; /*Wine Red */
+        padding-bottom: 0.3em;
+      }
+      .dropdown {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 1em; /* Spacing between dropdowns */
+      }
+      .dropdown-btn {
+        background-color: #3c0110; /* Royal Blue */
+        color: #4169e1;
+        padding: 16px;
+        font-size: 1.2em;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        text-align: left;
+        font-family: "Lobster", cursive;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+      .dropdown-btn:hover,
+      .dropdown-btn:focus {
+        background-color: #3c0110;
+        border: 5px solid #191b1f; /* Dark Pewter Gray */
+        border-radius: 0.75rem;
+        box-shadow: 0px 0px 15px #1b4b7e; /* Wine Red */
+      }
+      .dropdown-content {
+        display: none;
+        position: relative; /* changed from absolute*/
+        background-color: #191b1f; /* Slightly darker gray */
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        padding: 1em;
+        border-radius: 5px;
+        border-radius: 0.75rem;
+        box-shadow: 0px 0px 15px #4169e1;
+        margin-top: 5px; /* Add a little spacing between button and content */
+        transition: max-height 0.3s ease;
+        overflow: hidden;
+        max-height: 0;
+      }
+      .dropdown-content p {
+        color: #4169e1;
+        padding: 0.5em 0;
+        text-align: left;
+        font-size: 1em;
+      }
+      .dropdown-content .recipe {
+        font-style: italic;
+        margin-bottom: 0.8em;
+      }
+      .dropdown-content .poem {
+        font-style: normal;
+        line-height: 1.4;
+      }
+      .show {
+        display: block;
+        max-height: 500px; /* Adjust as needed */
+      }
+      footer {
+        background-color: #3c0110; /* Wine Red */
+        color: #4169e1;
+        text-align: center;
+        padding: 1em 0;
+        font-size: 1em;
+        border: 2px solid #191b1f; /* Dark Pewter Gray */
+        border-radius: 0.75rem;
+        box-shadow: 0px -5px 15px #1b4b7e;
+        /* border-top: 5px solid #4169e1; */
+      } /* MediaQueries for Responsiveness */
+      .home {
+        color: #4169e1;
+        text-decoration: none;
+        padding: 0.15rem;
+        border: 2px solid #191b1f; /* Dark Pewter Gray */
+        border-radius: 0.5rem;
+      }
+      .home:hover {
+        padding: 0.25rem;
+        background-color: #4169e1;
+        color: #3c0110;
+        border: 2px solid #191b1f; /* Dark Pewter Gray */
+        border-radius: 0.5rem;
+        box-shadow: 0px 0px 10px #1b4b7e;
+      }
+      @media screen and (max-width: 600px) {
+        header h1 {
+          font-size: 2.5em;
+        }
+        .dropdown-btn {
+          font-size: 1em;
+        }
+        .recipe-category h2 {
+          font-size: 2em;
+        }
+      }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Global Gastronomy & Verse</h1>
+      <p>A Culinary Journey Around the World, Accompanied by Poetic Musings.</p>
+    </header>
+
+    <main>
+      <section class="recipe-category">
+        <h2>Italian Delights</h2>
+        <div class="dropdown">
+          <button
+            class="dropdown-btn"
+            aria-expanded="false"
+            aria-controls="dropdown1"
+          >
+            Spaghetti Carbonara
+          </button>
+          <div class="dropdown-content" id="dropdown1">
+            <p class="recipe">
+              <b>Instructions:</b> Cook pasta, crisp pancetta. Combine eggs,
+              cheese, and pepper. Toss with hot pasta and pancetta. Serve
+              immediately.
+            </p>
+            <p class="poem">
+              Creamy swirls, a golden hue,<br />
+              Carbonara, fresh and new.<br />
+              A taste of Rome, a simple plea,<br />
+              For comfort and felicity.
+            </p>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <button
+            class="dropdown-btn"
+            aria-expanded="false"
+            aria-controls="dropdown2"
+          >
+            Margherita Pizza
+          </button>
+          <div class="dropdown-content" id="dropdown2">
+            <p class="recipe">
+              <b>Ingredients:</b> Dough, tomato sauce, mozzarella, basil. <br />
+              <b>Instructions:</b> Spread sauce on dough. Add mozzarella and
+              basil. Bake until crust is golden and cheese melted.
+            </p>
+            <p class="poem">
+              Red, white, and green, a flag unfurled,<br />
+              Margherita, a taste of the world.<br />
+              Simple flavors, a perfect blend,<br />
+              A pizza that knows no end.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="recipe-category">
+        <h2>Asian Inspirations</h2>
+        <div class="dropdown">
+          <button
+            class="dropdown-btn"
+            aria-expanded="false"
+            aria-controls="dropdown3"
+          >
+            Chicken Stir-Fry
+          </button>
+          <div class="dropdown-content" id="dropdown3">
+            <p class="recipe">
+              <b>Ingredients:</b> Chicken, soy sauce, ginger, garlic, vegetables
+              (broccoli, carrots, bell peppers), rice. <br />
+              <b>Instructions:</b> Stir-fry chicken with ginger and garlic. Add
+              vegetables and soy sauce. Serve over rice.
+            </p>
+            <p class="poem">
+              Wok ablaze, a fragrant dance,<br />
+              Chicken Stir-Fry, a spicy chance.<br />
+              Ginger's zest, a soy-sauce dream,<br />
+              A culinary, flowing stream.
+            </p>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <button
+            class="dropdown-btn"
+            aria-expanded="false"
+            aria-controls="dropdown4"
+          >
+            Sushi Rolls
+          </button>
+          <div class="dropdown-content" id="dropdown4">
+            <p class="recipe">
+              <b>Ingredients:</b> Sushi rice, seaweed (nori), fish (salmon,
+              tuna), avocado, cucumber. <br />
+              <b>Instructions:</b> Spread rice on nori. Add fish and vegetables.
+              Roll tightly. Slice and serve.
+            </p>
+            <p class="poem">
+              Rice and seaweed, a careful art,<br />
+              Sushi rolls, a work of heart.<br />
+              Ocean's bounty, a vibrant sight,<br />
+              A taste of freshness, pure delight.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="recipe-category">
+        <h2>South American Flavors</h2>
+
+        <div class="dropdown">
+          <button
+            class="dropdown-btn"
+            aria-expanded="false"
+            aria-controls="dropdown5"
+          >
+            Empanadas
+          </button>
+          <div class="dropdown-content" id="dropdown5">
+            <p class="recipe">
+              <b>Ingredients:</b> Dough, ground beef, onions, peppers, spices.
+              <br />
+              <b>Instructions:</b> Prepare filling with ground beef, onions,
+              peppers, and spices. Fill dough circles, crimp edges, and bake or
+              fry.
+            </p>
+            <p class="poem">
+              Pocketed warmth, a spiced embrace,<br />
+              Empanadas, a savory grace.<br />
+              Filled with flavors, bold and bright,<br />
+              A South American delight.
+            </p>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <button
+            class="dropdown-btn"
+            aria-expanded="false"
+            aria-controls="dropdown6"
+          >
+            Ceviche
+          </button>
+          <div class="dropdown-content" id="dropdown6">
+            <p class="recipe">
+              <b>Ingredients:</b> Raw fish (e.g., sea bass), lime juice, red
+              onion, cilantro, chili peppers. <br />
+              <b>Instructions:</b> Marinate fish in lime juice. Add red onion,
+              cilantro, and chili peppers. Serve chilled.
+            </p>
+            <p class="poem">
+              Citrus kiss, a vibrant tang,<br />
+              Ceviche sings, a joyful clang.<br />
+              Ocean's freshness, a zesty plea,<br />
+              A taste of summer, wild and free.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        © 2024 Global Gastronomy & Verse. Bon Appétit!
+        <a class="home" href="index.html"> Home -></a>
+      </p>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const dropdownButtons = document.querySelectorAll(".dropdown-btn");
+
+        dropdownButtons.forEach((button) => {
+          button.addEventListener("click", function (event) {
+            event.stopPropagation(); // Prevent the event from bubbling up to the window
+            const dropdownContent = this.nextElementSibling;
+            const isExpanded = this.getAttribute("aria-expanded") === "true";
+
+            // Toggle the dropdown content
+            dropdownContent.classList.toggle("show");
+            this.setAttribute("aria-expanded", !isExpanded);
+
+            // Close other dropdowns if this one is opened
+            dropdownButtons.forEach((otherButton) => {
+              if (otherButton !== button) {
+                const otherContent = otherButton.nextElementSibling;
+                otherContent.classList.remove("show");
+                otherButton.setAttribute("aria-expanded", "false");
+              }
+            });
+          });
+
+          // Allow keyboard navigation
+          button.addEventListener("keydown", function (event) {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              this.click();
+            }
+          });
+        });
+
+        // Close the dropdown if the user clicks outside of it
+        window.addEventListener("click", function (event) {
+          if (!event.target.matches(".dropdown-btn")) {
+            const dropdowns = document.querySelectorAll(".dropdown-content");
+            dropdowns.forEach((openDropdown) => {
+              if (openDropdown.classList.contains("show")) {
+                openDropdown.classList.remove("show");
+                openDropdown.previousElementSibling.setAttribute(
+                  "aria-expanded",
+                  "false"
+                );
+              }
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

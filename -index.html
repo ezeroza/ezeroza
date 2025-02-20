@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Slideshow Screensaver</title>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden; /* Hide scrollbars */
+        background-color: black; /* Default background */
+      }
+
+      .slideshow-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      .slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0; /* Initially hidden */
+        transition: opacity 1s ease-in-out; /* Smooth transition */
+        background-size: cover; /* Cover the entire area */
+        background-position: center; /* Center the image */
+        z-index: 1; /* Ensure image is above the default background */
+      }
+
+      .slide.active {
+        opacity: 1; /* Make active slide visible */
+        z-index: 2; /* Bring active slide to the front */
+      }
+
+      /* Optional: Add a fade-in effect on load. This prevents a flash of black */
+      body.loaded .slide {
+        transition: opacity 1s ease-in-out;
+      }
+    </style>
+  </head>
+  <body class="loaded">
+    <a href="3index.html">
+      <div class="slideshow-container">
+        <div
+          class="slide"
+          style="background-image: url('/assets/horse1.jpg')"
+        ></div>
+        <div
+          class="slide"
+          style="background-image: url('/assets/panth2.jpg')"
+        ></div>
+        <div
+          class="slide"
+          style="background-image: url('/assets/horse2.jpg')"
+        ></div>
+        <div
+          class="slide"
+          style="background-image: url('/assets/panth3.jpg')"
+        ></div>
+        <div
+          class="slide"
+          style="background-image: url('/assets/horse3.jpg')"
+        ></div>
+        <div
+          class="slide"
+          style="background-image: url('/assets/panth4.jpg')"
+        ></div></div
+    ></a>
+
+    <script>
+      const slides = document.querySelectorAll(".slide");
+      let currentSlide = 0;
+      const intervalTime = 3500; // Time between slides (milliseconds)
+
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          if (i === index) {
+            slide.classList.add("active");
+          } else {
+            slide.classList.remove("active");
+          }
+        });
+      }
+
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+      }
+
+      // Initial slide
+      showSlide(currentSlide);
+
+      // Start the slideshow
+      setInterval(nextSlide, intervalTime);
+
+      // Optional: Fade in on load.  Important to avoid initial flash.
+      document.addEventListener("DOMContentLoaded", function () {
+        document.body.classList.add("loaded"); // Add the 'loaded' class to trigger the fade-in.
+      });
+    </script>
+  </body>
+</html>
